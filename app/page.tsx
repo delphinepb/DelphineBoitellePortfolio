@@ -4,13 +4,12 @@ import { useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import {
   ArrowRight,
-  Github,
   Linkedin,
   Mail,
   Download,
-  Code,
-  Palette,
-  Globe,
+  Users,
+  MessageSquare,
+  Briefcase,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -73,14 +72,14 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <motion.div className="text-xl font-bold text-gray-900" whileHover={{ scale: 1.05 }}>
-              Portfolio
+              Mon Portfolio
             </motion.div>
             <div className="hidden md:flex space-x-8">
               {[
-                { id: "home", label: "Home" },
-                { id: "about", label: "About" },
-                { id: "experiencesproj", label: "Projects and Experiences" },
-                { id: "skills", label: "Skills" },
+                { id: "accueil", label: "Accueil" },
+                { id: "about", label: "À propos" },
+                { id: "experiencesproj", label: "Expériences" },
+                { id: "skills", label: "Compétences" },
                 { id: "contact", label: "Contact" },
               ].map((item) => (
                 <button
@@ -183,7 +182,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Hey, I&apos;m Delphine
+                Hey, moi c'est Delphine Boitelle
               </motion.span>
               <motion.span
                 className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
@@ -192,7 +191,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 whileHover={{ scale: 1.05 }}
               >
-                A full stack developer
+                Et je suis en reconversion vers les RH
               </motion.span>
             </motion.h1>
 
@@ -214,7 +213,7 @@ export default function Home() {
                   backgroundSize: "200% 100%",
                 }}
               >
-                Passionate and rigorous, I am looking for a permanent contract to contribute to your team on a long-term basis.
+                Forte de mon expérience en coordination de projets IT, je me réoriente vers les Ressources Humaines pour accompagner les talents.
               </motion.span>
             </motion.p>
 
@@ -235,7 +234,7 @@ export default function Home() {
                     animate={{ x: [0, 2, 0] }}
                     transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                   >
-                    See my projects and experiences
+                    Voir mes expériences
                   </motion.span>
                   <motion.div
                     animate={{ x: [0, 4, 0] }}
@@ -259,7 +258,7 @@ export default function Home() {
                   onClick={() => scrollToSection("contact")}
                   className="border-2 hover:bg-gray-50 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  Contact me
+                  Me contacter
                 </Button>
               </motion.div>
             </motion.div>
@@ -307,7 +306,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About me</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">À propos</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -330,15 +329,18 @@ export default function Home() {
               className="space-y-6"
             >
               <p className="text-gray-600 leading-relaxed">
-                With over 3 years of work-study experience in web development, I&apos;m looking for a company
-                to grow and contribute to exciting projects.
+                Après 3 ans d&apos;alternance en développement et coordination de projets IT, je souhaite me réorienter vers les Ressources Humaines.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                I enjoy taking on new challenges and continually learning to stay at the forefront of innovation.              </p>
-                <a href="/CV_Delphine-BOITELLE_Dev.pdf" download>
+                Mon expérience m&apos;a permis de développer des compétences en gestion de projet, communication transverse et travail en équipe que je souhaite mettre au service de l&apos;accompagnement des collaborateurs.
+              </p>
+              <p className="text-gray-600 leading-relaxed font-medium">
+                🎯 Objectif : Intégrer le MSc Ressources Humaines à l&apos;INSEEC et trouver mon alternance pour septembre 2026.
+              </p>
+                <a href="/CV_TalentAcquisition_Delphine_Boitelle.pdf" download>
                   <Button variant="outline" className="mt-4">
                     <Download className="mr-2 h-4 w-4" />
-                    Download CV
+                    Télécharger mon CV
                   </Button>
                 </a>
             </motion.div>
@@ -356,31 +358,25 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">My projects and experiences</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Mes expériences</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover my professional experiences
+              Découvrez mon parcours professionnel
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[
               {
-                title: "Apprenticeship at Dailybiz",
-                description: "As a full stack developer in 2022/2023.",
-                image: "/dailybiz.jfif",
-                tech: [".Net", "Javascript", "SQL", "Gitlab"],
-              },
-              {
-                title: "Apprenticeship at Sopra Steria",
-                description: "As a backend developer in 2023/2025.",
+                title: "Sopra Steria - Montreuil",
+                description: "Coordinatrice Projet IT & Développeuse Java (2023-2025)",
                 image: "/spst.png",
-                tech: ["Java", "JUnit - Mockito", "GitLab", "Agile Scrum"],
+                tech: ["Suivi client", "Coordination d'équipe", "Reporting", "Méthodologie Agile", "Rédaction de procédures"],
               },
               {
-                title: "Badken",
-                description: "Website for photographer",
-                image: "/bk.jpeg",
-                tech: ["Next.js", "Framer Motion", "TypeScript"],
+                title: "Dailybiz - Saint-Ouen",
+                description: "Développeuse Full Stack & Coordination technique (2022-2023)",
+                image: "/dailybiz.jfif",
+                tech: ["Travail en équipe pluridisciplinaire", "Organisation des tâches", "Communication transverse"],
               },
             ].map((project, index) => (
               <motion.div
@@ -428,17 +424,17 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Compétences</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Technologies and tools that I master to create high-performance digital solutions.
+              Des compétences transférables au service des Ressources Humaines.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Code, title: "Frontend", skills: ["NextJs", "ReactJs", "TypeScript", "Tailwind CSS"] },
-              { icon: Globe, title: "Backend", skills: ["Node.js", "Java",".Net", "PostgreSQL"] },
-              { icon: Palette, title: "Tools", skills: ["Intellij IDEA", "Eclipse", "Git", "Docker", "Jira/Trello"] },
+              { icon: Briefcase, title: "Organisation", skills: ["Gestion de projet", "Planification", "Suivi des délais", "Reporting"] },
+              { icon: Users, title: "Relationnel", skills: ["Communication transverse", "Coordination d'équipe", "Suivi client", "Travail collaboratif"] },
+              { icon: MessageSquare, title: "Outils & Méthodes", skills: ["Suite Office", "Jira / Trello", "Méthodologie Agile", "Cycle en V"] },
             ].map((category, index) => (
               <motion.div
                 key={index}
@@ -479,11 +475,11 @@ export default function Home() {
             viewport={{ once: true }}
             className="bg-white rounded-2xl p-8 shadow-lg"
           >
-            <h2 className=" text-center text-4xl font-bold text-gray-900 mb-4">Contact me</h2>
+            <h2 className=" text-center text-4xl font-bold text-gray-900 mb-4">Me contacter</h2>
             <p className="text-center mb-16 text-gray-600 max-w-2xl mx-auto">
-              If you have any questions, please contact me.
+              Une question ? N&apos;hésitez pas à me contacter.
             </p>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="grid md:grid-cols-2 gap-8 text-center max-w-md mx-auto">
               <motion.div whileHover={{ scale: 1.05 }} className="space-y-3">
                 <a
                   href="mailto:delphine@boitelleparsy.com"
@@ -506,19 +502,6 @@ export default function Home() {
                   </div>
                 </a>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} className="space-y-3">
-                <a
-                  href="https://github.com/delphinepb"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                    <Github className="h-6 w-6 text-blue-600" />
-                  </div>
-                </a>
-              </motion.div>
-
             </div>
 
             <motion.div
@@ -536,7 +519,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-white border-t border-gray-200 py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <p className="text-gray-600">© 2025 Portfolio. Create with passion.</p>
+          <p className="text-gray-600">© 2025 Portfolio. Créé avec passion.</p>
         </div>
       </footer>
     </div>

@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Delphine Boitelle",
-  description: "Mon portfolio",
+  title: "Delphine Boitelle - Reconversion RH",
+  description: "Portfolio de Delphine Boitelle - En reconversion vers les Ressources Humaines",
 };
 
 export default function RootLayout({
